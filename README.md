@@ -11,11 +11,12 @@
 # 먼저 클론을 받는다.
 git clone https://github.com/somefood/algorithm-study.git
 
-# 디렉토리에 들어가서 풀이한 디렉토리에 들어간다
-cd programmers/LEVEL1
 
 # branch를 만들고 바꿔준다.
-git checkout -d seokju <- 본인이름으로
+git checkout -d seokju <- 본인이름으로 하면 됨
+
+# 디렉토리에 들어가서 풀이한 디렉토리에 들어간다
+cd programmers/LEVEL1
 
 # 자기 디렉터리 생성
 mkdir seokju
