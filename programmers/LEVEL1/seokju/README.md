@@ -1,3 +1,0 @@
-# 홍석주 프로그래머스 LEVE1 풀이
-
-- ~~X만큼 간격이 있는 n개의 숫자 풀이(Python, Javascript)~~
