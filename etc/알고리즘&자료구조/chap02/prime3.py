@@ -20,6 +20,7 @@ for n in range(5, 1001, 2):
         ptr += 1
         counter += 1
 
+
 for i in range(ptr):
     print(prime[i])
 print(counter)
