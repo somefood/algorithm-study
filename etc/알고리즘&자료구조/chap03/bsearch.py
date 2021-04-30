@@ -10,20 +10,30 @@ def bin_search(a: Sequence, key: Any) -> int:
         if a[pc] == key:
             return pc
         elif a[pc] < key:
-            pl = pc+1
+            pl = pc + 1
         else:
-            pr = pc-1
+            pr = pc - 1
         if pl > pr:
             break
     return -1
 
 
 if __name__ == '__main__':
-    x = [1, 2, 3, 5, 7, 8, 9]
-    ky = 7
+    num = int(input('input number of elemnent'))
+    x = [None] * num
+
+    x[0] = int(input('x[0]: '))
+    for i in range(1, num):
+        while True:
+            x[i] = int(input(f'x[{i}]: '))
+            if x[i] >= x[i - 1]:
+                break
+    
+    ky = int(input('search value'))
+
     idx = bin_search(x, ky)
 
     if idx == -1:
-        print('X')
+        print('no')
     else:
         print(idx)

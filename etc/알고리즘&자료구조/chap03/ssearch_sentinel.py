@@ -11,22 +11,21 @@ def seq_search(seq: Sequence, key: Any) -> int:
         if a[i] == key:
             break
         i += 1
-
     return -1 if i == len(seq) else i
 
 
 if __name__ == '__main__':
-    num = int(input('원소 수를 입력하세요.'))
+    num = int(input())
     x = [None] * num
 
     for i in range(num):
         x[i] = int(input(f'x[{i}]: '))
-
-    ky = int(input('검색할 값 입력'))
+    
+    ky = int(input('검색할 값을 입력하세요.: '))
 
     idx = seq_search(x, ky)
 
     if idx == -1:
-        print('찾는 값이 없습니다.')
+        print('nno')
     else:
-        print('찾는 값은 {}에 있습니다'.format(idx))
+        print(idx)
