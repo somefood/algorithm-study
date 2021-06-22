@@ -24,7 +24,7 @@ public class ArrayStack<E> {
     
     public void push(E newItem) {
     	if(size() == s.length) {
-    		resize(2 * s.length)
+    		resize(2 * s.length);
     	}
     	s[++top] = newItem;
     }
