@@ -1,7 +1,9 @@
-word = input()
+S = str(input())
+S_list = []
 
-result = []
-for i in range(len(word)):
-    result.append(word[:i])
+for _ in S:
+    S_list.append(S)
+    S = S[1:]
 
-print(result)
+for i in sorted(S_list):
+    print(i)
