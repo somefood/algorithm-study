@@ -3,6 +3,8 @@ import sys
 
 def dfs(L, hap):
     global res
+    if L > res:
+        return
     if hap == m:
         if L < res:
             res = L
