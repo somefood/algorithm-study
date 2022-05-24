@@ -31,3 +31,5 @@ max_value = max(s, e)
 dis = [i for i in range(max_value + 1)]
 visited = [-1] * (max_value + 1)
 print(bfs(s))
+
+"5 14"
