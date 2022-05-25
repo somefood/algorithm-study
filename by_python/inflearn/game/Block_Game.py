@@ -9,6 +9,16 @@ class Brick:
         self.x = 6
         self.color = r.randint(1, 6)
 
+    def move_left(self, grid):
+        if grid[self.y][self.x - 1] == 0 and grid[self.y + 1][self.x - 1] == 0:
+            grid[self.y][self.x] = 0
+            self.x -= 1
+
+    def move_right(self, grid):
+        if grid[self.y][self.x + 1] == 0 and grid[self.y + 1][self.x + 1] == 0:
+            grid[self.y][self.x] = 0
+            self.x += 1
+
 
 def draw_grid(block, grid):
     block.clear()
@@ -17,7 +27,7 @@ def draw_grid(block, grid):
     colors = ["black", "red", "blue", "orange", "yellow", "green", "purple", "white"]
     for y in range(len(grid)):
         for x in range(len(grid[0])):
-            sc_x = left + (x * 22) # pixel이 20
+            sc_x = left + (x * 22)  # pixel이 20
             sc_y = top - (y * 22)
             block.goto(sc_x, sc_y)
             block.color(colors[grid[y][x]])
@@ -50,16 +60,19 @@ if __name__ == "__main__":
     grid[brick.y][brick.x] = brick.color
     draw_grid(block, grid)
 
+    sc.onkeypress(lambda: brick.move_left(grid), "Left")
+    sc.onkeypress(lambda: brick.move_right(grid), "Right")
+    sc.listen()
+
     while True:
         sc.update()
         if grid[brick.y + 1][brick.x] == 0:
             grid[brick.y][brick.x] = 0
             brick.y += 1
             grid[brick.y][brick.x] = brick.color
-        for x in grid:
-            print(x)
-        print()
+        else:
+            brick = Brick()
         draw_grid(block, grid)
-        time.sleep(0.5)
+        time.sleep(0.1)
 
-    sc.mainloop() # 계속 띄우기
+    sc.mainloop()  # 계속 띄우기
