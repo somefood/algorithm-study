@@ -1,3 +1,12 @@
+def dfs(k, n):
+    if k == 0:
+        return n
+    if n == 1:
+        return 1
+
+    return dfs(k, n - 1) + dfs(k-1, n)
+
+
 N = 15
 
 arr = [[0] * N for _ in range(N)]
@@ -14,12 +23,18 @@ for i in range(1, N):
 
 t = int(input())
 
+# for _ in range(t):
+#     k = int(input())
+#     n = int(input())
+#     result = 0
+#     print(arr[k][n-1])
+
+
 for _ in range(t):
     k = int(input())
     n = int(input())
     result = 0
-    print(arr[k][n-1])
-
+    print(dfs(k, n))
 
 """
 2
